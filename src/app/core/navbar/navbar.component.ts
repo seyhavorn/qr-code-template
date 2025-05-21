@@ -10,9 +10,19 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   loading: boolean = true;
-  constructor() {
-    // Constructor logic can be added here if needed
-  }
+  navList: { title: string; route: string }[] = [];
+  constructor() {}
 
-  // Add any methods or properties needed for the navbar functionality
+  ngOnInit() {
+    this.navList = [
+      {
+        title: 'QR Code Simple',
+        route: '/qr-code-simple',
+      },
+      {
+        title: 'QR Code Image',
+        route: '/qr-code-image',
+      },
+    ];
+  }
 }

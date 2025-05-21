@@ -18,14 +18,14 @@ const routes: Routes = [
         path: 'qr-code-image',
         component: QrCodeImageComponent,
       },
-      { path: '**', redirectTo: '', pathMatch: 'full' },
+      { path: '**', redirectTo: 'qr-code-simple', pathMatch: 'full' },
     ],
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'qr-code-simple', pathMatch: 'full' },
 ];
 
 @NgModule({
-  declarations: [SimpleQrComponent, QrCodeMainComponent],
+  declarations: [SimpleQrComponent, QrCodeMainComponent, QrCodeImageComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class QrCodeModule {}
